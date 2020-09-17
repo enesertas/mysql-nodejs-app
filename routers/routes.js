@@ -1,12 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const controllers = require('../controllers/controllers');
+router.get('/', controllers.getIndex);
 
-router.get('/', (req, res, next) => {
-  res.render('index');
-});
-
-router.post('/', (req, res, next) => {
-  res.redirect('/');
-});
+router.post('/add-data', controllers.postAddData);
 
 module.exports = router;
