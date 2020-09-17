@@ -1,15 +1,14 @@
 const path = require('path');
 const bodyParser = require('body-parser');
 const express = require('express');
-const app = express();
 const db = require('./util/database');
-const router = express.Router;
+const routes = require('./routers/routes')
 
-app('view engine', 'ejs');
-app('views', 'views');
+const app = express();
 
-app.use((req, res, next) => {
-    res.render('index');
-  });
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
+app.use(routes)
 
 app.listen(3000);
