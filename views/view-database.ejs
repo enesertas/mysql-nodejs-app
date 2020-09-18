@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>veri goruntuleme</title>
+</head>
+
+<body>
+    <% if(datas.length > 0){ %>
+    <ul>
+        <% datas.forEach(datas => { %>
+        <li><%= datas.username %> </li>
+        <li><%= datas.password %> </li>
+        <% }); %>
+    </ul>
+    <p>tum datalari silmek icin butona tikla!</p>
+    <form action="/delete-data" method="post">
+        <button>buton</button>
+    </form>
+
+    <% } else { %>
+    <h1>gosterilecek data yok !</h1>
+    <p>anasayfaya yonlendirilmek için asagidaki butona tikalyin!</p>
+    <form action="/" method="get">
+        <button type="submit">bana tikla!</button>
+    </form>
+    <% } %>
+</body>
+
+</html>
