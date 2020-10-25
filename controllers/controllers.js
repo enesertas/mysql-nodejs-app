@@ -23,6 +23,7 @@ exports.getViewDatas = (req, res, next) => {
             console.log(err)
         });
 }
+// trying to push
 exports.postDeleteAll = (req, res, next) => {
     Data.deleteRows()
         .then(() => {
